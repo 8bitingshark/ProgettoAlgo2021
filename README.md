@@ -1,1 +1,1 @@
-ProgettoAlgo2021
+Algoritmi per i due progetti di Algoritmi del corso di Informatica 2020-2021 all'università di udine (UNIUD)
