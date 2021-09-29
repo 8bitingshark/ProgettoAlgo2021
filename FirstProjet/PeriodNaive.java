@@ -11,8 +11,8 @@ public class PeriodNaive implements Period {
             if (PeriodUtils.SatisfiesCondition(s, i)) return i;
         }
 
-        return 0;
-
+        return -1;
+ 
     }
     
 }

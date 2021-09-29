@@ -10,9 +10,12 @@ public class TestingUtils {
 
     public static void DefinedTests(Period p) {
         //Example tests taken from elearning page
-        assertEquals(p.minimalFractionaryPeriod("abcabcab"), 3);
-        assertEquals(p.minimalFractionaryPeriod("aba"), 2);
-        assertEquals(p.minimalFractionaryPeriod("abca"), 3);
+        assertEquals(3, p.minimalFractionaryPeriod("abcabcab"));
+        assertEquals(2, p.minimalFractionaryPeriod("aba"));
+        assertEquals(3, p.minimalFractionaryPeriod("abca"));
+        assertEquals(1, p.minimalFractionaryPeriod("aaaa"));
+        assertEquals(1, p.minimalFractionaryPeriod("aaaaa"));
+        assertEquals(-1, p.minimalFractionaryPeriod("ac"));
     }
 
     public static String[] GenerateStrings(int amount, char[] alphabet, int minLength, int maxLength) {
