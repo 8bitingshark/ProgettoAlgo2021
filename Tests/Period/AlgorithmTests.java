@@ -28,13 +28,19 @@ public class AlgorithmTests {
      */
     @Test
     public void PeriodSmartAndNaiveShouldBeEquivalent() {
-        String[] testStrings = TestingUtils.GenerateStrings(100, new char[]{'a', 'b', 'c'}, 500, 10000);
+        String[] testStrings = TestingUtils.GenerateStrings(1000, new char[]{'a', 'b', 'c'}, 500, 10000);
 
         Period naive = new PeriodNaive();
         Period smart = new PeriodSmart();
 
         for (int i = 0; i < testStrings.length; i++) {
-            assertEquals(naive.minimalFractionaryPeriod(testStrings[i]), smart.minimalFractionaryPeriod(testStrings[i]));
+            int n = naive.minimalFractionaryPeriod(testStrings[i]); 
+            int s = smart.minimalFractionaryPeriod(testStrings[i]);
+            if (n != s) {
+                System.out.println("Tested on:");
+                System.out.println(testStrings[i]);
+            }
+            assertEquals(n, s);
         }
     }
 
