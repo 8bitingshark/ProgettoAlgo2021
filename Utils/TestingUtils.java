@@ -18,6 +18,26 @@ public class TestingUtils {
         assertEquals(-1, p.minimalFractionaryPeriod("ac"));
     }
 
+    public static String[] GenerateStrings(int amount, char[] alphabet, int length) {
+
+        String[] randomStrings = new String[amount];
+
+        for (int i = 0; i < amount; i++) {
+            int len = length;
+
+            String randomString = "";
+
+            for (int j = 0; j < len; j++) {
+                randomString += alphabet[ThreadLocalRandom.current().nextInt(0, alphabet.length)];
+            }
+
+            randomStrings[i] = randomString;
+        }
+
+        return randomStrings;
+
+    }
+
     public static String[] GenerateStrings(int amount, char[] alphabet, int minLength, int maxLength) {
 
         double A = minLength;

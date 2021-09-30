@@ -1,5 +1,7 @@
 package ProgettoAlgo2021.Utils;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -74,6 +76,34 @@ public class IOUtils {
         }
 
         return arr;
+    }
+
+    /**
+     * Writes the given double matrix to a CSV file of the given name with "|" as the separator character and "\n" as the line separator
+     * @param data
+     * @param fileName
+     */
+    public static void saveAsCSV(double[][] data, String fileName) {
+
+        try {
+
+            FileWriter newWriter = new FileWriter(fileName + ".csv");
+
+            for (int i = 0; i < data.length; i++) {
+                for (int j = 0; j < data[i].length; j++) {
+                    newWriter.write(data[i][j] + "|");
+                }
+                newWriter.write("\n");
+            }
+
+            newWriter.close();
+            System.out.print("Successfully saved data to CSV file");
+
+        } catch (IOException e) {
+            System.out.println("An error occured when trying to write the CSV file");
+            e.printStackTrace();
+        }
+        
     }
     
 }
