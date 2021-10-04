@@ -62,5 +62,13 @@ public class TestingUtils {
 
     }
 
+    public static String GenerateWorstCaseNaive(int length) {
+        String worst = "";
+        for (int i = 0; i < length - 1; i++) {
+            worst += 'a';
+        }
+        return worst + 'b';
+    }
+
     
 }

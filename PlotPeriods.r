@@ -1,5 +1,5 @@
-naive <- read.table(sep="|", file="naive test.csv")
-smart <- read.table(sep="|", file="smart test.csv")
+naive <- read.table(sep="|", file="new naive test.csv")
+smart <- read.table(sep="|", file="new smart test.csv")
 t_naive <- t(naive)
 t_smart <- t(smart)
 names <- t_naive[1, ]
