@@ -16,16 +16,16 @@ class Main {
             return ((Integer)p.minimalFractionaryPeriod(s)).toString();
         });
 
-        double[][] naive = PeriodPerformance.BetterGetTimes(new PeriodNaive(), (int l) -> TestingUtils.GenerateStrings(1, new char[]{'a','b','c'}, l)[0], 100, 1000, 500000, 20);
+        double[][] naive = PeriodPerformance.GetTimes(new PeriodNaive(), (int l) -> TestingUtils.GenerateStrings(1, new char[]{'a','b','c'}, l)[0], 100, 1000, 500000, 20);
         IOUtils.saveAsCSV(naive, "random naive test");
 
-        double[][] smart = PeriodPerformance.BetterGetTimes(new PeriodSmart(), (int l) -> TestingUtils.GenerateStrings(1, new char[]{'a','b','c'}, l)[0], 100, 1000, 500000, 20);
+        double[][] smart = PeriodPerformance.GetTimes(new PeriodSmart(), (int l) -> TestingUtils.GenerateStrings(1, new char[]{'a','b','c'}, l)[0], 100, 1000, 500000, 20);
         IOUtils.saveAsCSV(smart, "random smart test");
 
-        double[][] wNaive = PeriodPerformance.BetterGetTimes(new PeriodNaive(), (int l) -> TestingUtils.GenerateWorstCaseNaive(l), 100, 1000, 500000, 5);
+        double[][] wNaive = PeriodPerformance.GetTimes(new PeriodNaive(), (int l) -> TestingUtils.GenerateWorstCaseNaive(l), 100, 1000, 500000, 5);
         IOUtils.saveAsCSV(wNaive, "worst for naive naive test");
 
-        double[][] wSmart = PeriodPerformance.BetterGetTimes(new PeriodSmart(), (int l) -> TestingUtils.GenerateWorstCaseNaive(l), 100, 1000, 500000, 5);
+        double[][] wSmart = PeriodPerformance.GetTimes(new PeriodSmart(), (int l) -> TestingUtils.GenerateWorstCaseNaive(l), 100, 1000, 500000, 5);
         IOUtils.saveAsCSV(wSmart, "worst for naive smart test");
 
     }
